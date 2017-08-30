@@ -12068,19 +12068,8 @@ les états-unis est parfois occupé en janvier , et il est parfois chaud en nove
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>TensorFlow Version: 1.2.0
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\cjimen6x\AppData\Local\Continuum\Anaconda3\envs\tensorflow\lib\site-packages\ipykernel_launcher.py:15: UserWarning: No GPU found. Please use a GPU to train your neural network.
-  from ipykernel import kernelapp as app
+<pre>TensorFlow Version: 1.1.0
+Default GPU Device: /gpu:0
 </pre>
 </div>
 </div>
@@ -12120,7 +12109,7 @@ les états-unis est parfois occupé en janvier , et il est parfois chaud en nove
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">model_inputs</span><span class="p">():</span>
@@ -12131,7 +12120,7 @@ les états-unis est parfois occupé en janvier , et il est parfois chaud en nove
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">inputs_</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;input&quot;</span><span class="p">)</span>
     <span class="n">targets_</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-    <span class="n">learn_rate</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+    <span class="n">learn_rate</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">keep_prob</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;keep_prob&quot;</span><span class="p">)</span>
     <span class="n">target_seq_len</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span> <span class="p">(</span><span class="kc">None</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;target_sequence_length&quot;</span><span class="p">)</span>
     <span class="n">max_target_seq_len</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_max</span><span class="p">(</span><span class="n">target_seq_len</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;max_target_len&quot;</span><span class="p">)</span>
@@ -12160,21 +12149,7 @@ les états-unis est parfois occupé en janvier , et il est parfois chaud en nove
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ERROR:tensorflow:==================================
-Object was never used (type &lt;class &#39;tensorflow.python.framework.ops.Operation&#39;&gt;):
-&lt;tf.Operation &#39;assert_rank_2/Assert/Assert&#39; type=Assert&gt;
-If you want to mark it as used call its &#34;mark_used()&#34; method.
-It was originally created here:
-[&#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\runpy.py&#34;, line 193, in _run_module_as_main\n    &#34;__main__&#34;, mod_spec)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\runpy.py&#34;, line 85, in _run_code\n    exec(code, run_globals)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel_launcher.py&#34;, line 16, in &lt;module&gt;\n    app.launch_new_instance()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\traitlets\\config\\application.py&#34;, line 658, in launch_instance\n    app.start()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\kernelapp.py&#34;, line 477, in start\n    ioloop.IOLoop.instance().start()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\zmq\\eventloop\\ioloop.py&#34;, line 177, in start\n    super(ZMQIOLoop, self).start()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tornado\\ioloop.py&#34;, line 888, in start\n    handler_func(fd_obj, events)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tornado\\stack_context.py&#34;, line 277, in null_wrapper\n    return fn(*args, **kwargs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\zmq\\eventloop\\zmqstream.py&#34;, line 440, in _handle_events\n    self._handle_recv()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\zmq\\eventloop\\zmqstream.py&#34;, line 472, in _handle_recv\n    self._run_callback(callback, msg)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\zmq\\eventloop\\zmqstream.py&#34;, line 414, in _run_callback\n    callback(*args, **kwargs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tornado\\stack_context.py&#34;, line 277, in null_wrapper\n    return fn(*args, **kwargs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\kernelbase.py&#34;, line 283, in dispatcher\n    return self.dispatch_shell(stream, msg)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\kernelbase.py&#34;, line 235, in dispatch_shell\n    handler(stream, idents, msg)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\kernelbase.py&#34;, line 399, in execute_request\n    user_expressions, allow_stdin)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\ipkernel.py&#34;, line 196, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\zmqshell.py&#34;, line 533, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\IPython\\core\\interactiveshell.py&#34;, line 2698, in run_cell\n    interactivity=interactivity, compiler=compiler, result=result)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\IPython\\core\\interactiveshell.py&#34;, line 2808, in run_ast_nodes\n    if self.run_code(code, result):&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\IPython\\core\\interactiveshell.py&#34;, line 2862, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)&#39;, &#39;File &#34;&lt;ipython-input-25-644a61fbfea0&gt;&#34;, line 21, in &lt;module&gt;\n    tests.test_model_inputs(model_inputs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\Desktop\\Python Stuff\\Udacity\\dlnd-translation\\problem_unittests.py&#34;, line 106, in test_model_inputs\n    assert tf.assert_rank(lr, 0, message=\&#39;Learning Rate has wrong rank\&#39;)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\ops\\check_ops.py&#34;, line 617, in assert_rank\n    dynamic_condition, data, summarize)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\ops\\check_ops.py&#34;, line 571, in _assert_rank_condition\n    return control_flow_ops.Assert(condition, data, summarize=summarize)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\util\\tf_should_use.py&#34;, line 170, in wrapped\n    return _add_should_use_warning(fn(*args, **kwargs))&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\util\\tf_should_use.py&#34;, line 139, in _add_should_use_warning\n    wrapped = TFShouldUseWarningWrapper(x)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\util\\tf_should_use.py&#34;, line 96, in __init__\n    stack = [s.strip() for s in traceback.format_stack()]&#39;]
-==================================
-ERROR:tensorflow:==================================
-Object was never used (type &lt;class &#39;tensorflow.python.framework.ops.Operation&#39;&gt;):
-&lt;tf.Operation &#39;assert_rank_3/Assert/Assert&#39; type=Assert&gt;
-If you want to mark it as used call its &#34;mark_used()&#34; method.
-It was originally created here:
-[&#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\runpy.py&#34;, line 193, in _run_module_as_main\n    &#34;__main__&#34;, mod_spec)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\runpy.py&#34;, line 85, in _run_code\n    exec(code, run_globals)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel_launcher.py&#34;, line 16, in &lt;module&gt;\n    app.launch_new_instance()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\traitlets\\config\\application.py&#34;, line 658, in launch_instance\n    app.start()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\kernelapp.py&#34;, line 477, in start\n    ioloop.IOLoop.instance().start()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\zmq\\eventloop\\ioloop.py&#34;, line 177, in start\n    super(ZMQIOLoop, self).start()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tornado\\ioloop.py&#34;, line 888, in start\n    handler_func(fd_obj, events)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tornado\\stack_context.py&#34;, line 277, in null_wrapper\n    return fn(*args, **kwargs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\zmq\\eventloop\\zmqstream.py&#34;, line 440, in _handle_events\n    self._handle_recv()&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\zmq\\eventloop\\zmqstream.py&#34;, line 472, in _handle_recv\n    self._run_callback(callback, msg)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\zmq\\eventloop\\zmqstream.py&#34;, line 414, in _run_callback\n    callback(*args, **kwargs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tornado\\stack_context.py&#34;, line 277, in null_wrapper\n    return fn(*args, **kwargs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\kernelbase.py&#34;, line 283, in dispatcher\n    return self.dispatch_shell(stream, msg)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\kernelbase.py&#34;, line 235, in dispatch_shell\n    handler(stream, idents, msg)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\kernelbase.py&#34;, line 399, in execute_request\n    user_expressions, allow_stdin)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\ipkernel.py&#34;, line 196, in do_execute\n    res = shell.run_cell(code, store_history=store_history, silent=silent)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\ipykernel\\zmqshell.py&#34;, line 533, in run_cell\n    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\IPython\\core\\interactiveshell.py&#34;, line 2698, in run_cell\n    interactivity=interactivity, compiler=compiler, result=result)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\IPython\\core\\interactiveshell.py&#34;, line 2808, in run_ast_nodes\n    if self.run_code(code, result):&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\IPython\\core\\interactiveshell.py&#34;, line 2862, in run_code\n    exec(code_obj, self.user_global_ns, self.user_ns)&#39;, &#39;File &#34;&lt;ipython-input-25-644a61fbfea0&gt;&#34;, line 21, in &lt;module&gt;\n    tests.test_model_inputs(model_inputs)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\Desktop\\Python Stuff\\Udacity\\dlnd-translation\\problem_unittests.py&#34;, line 107, in test_model_inputs\n    assert tf.assert_rank(keep_prob, 0, message=\&#39;Keep Probability has wrong rank\&#39;)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\ops\\check_ops.py&#34;, line 617, in assert_rank\n    dynamic_condition, data, summarize)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\ops\\check_ops.py&#34;, line 571, in _assert_rank_condition\n    return control_flow_ops.Assert(condition, data, summarize=summarize)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\util\\tf_should_use.py&#34;, line 170, in wrapped\n    return _add_should_use_warning(fn(*args, **kwargs))&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\util\\tf_should_use.py&#34;, line 139, in _add_should_use_warning\n    wrapped = TFShouldUseWarningWrapper(x)&#39;, &#39;File &#34;C:\\Users\\cjimen6x\\AppData\\Local\\Continuum\\Anaconda3\\envs\\tensorflow\\lib\\site-packages\\tensorflow\\python\\util\\tf_should_use.py&#34;, line 96, in __init__\n    stack = [s.strip() for s in traceback.format_stack()]&#39;]
-==================================
-Tests Passed
+<pre>Tests Passed
 </pre>
 </div>
 </div>
@@ -12256,7 +12231,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">imp</span> <span class="k">import</span> <span class="n">reload</span>
@@ -12359,8 +12334,8 @@ Tests Passed
                                                     <span class="n">encoder_state</span><span class="p">,</span> 
                                                     <span class="n">output_layer</span><span class="p">)</span>
 
-    <span class="n">f_outputs</span><span class="p">,</span> <span class="n">f_state</span><span class="p">,</span> <span class="n">f_seq_lengths</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">seq2seq</span><span class="o">.</span><span class="n">dynamic_decode</span><span class="p">(</span><span class="n">basic_decoder</span><span class="p">,</span> 
-                                                                          <span class="n">maximum_iterations</span><span class="o">=</span><span class="n">max_summary_length</span><span class="p">)</span>
+    <span class="n">f_outputs</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">seq2seq</span><span class="o">.</span><span class="n">dynamic_decode</span><span class="p">(</span><span class="n">basic_decoder</span><span class="p">,</span> 
+                                                  <span class="n">maximum_iterations</span><span class="o">=</span><span class="n">max_summary_length</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">f_outputs</span>
 
@@ -12409,7 +12384,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">decoding_layer_infer</span><span class="p">(</span><span class="n">encoder_state</span><span class="p">,</span> <span class="n">dec_cell</span><span class="p">,</span> <span class="n">dec_embeddings</span><span class="p">,</span> <span class="n">start_of_sequence_id</span><span class="p">,</span>
@@ -12492,7 +12467,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.python.layers.core</span> <span class="k">import</span> <span class="n">Dense</span>
@@ -12603,7 +12578,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">seq2seq_model</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">target_data</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span>
@@ -12707,11 +12682,11 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Number of Epochs</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="c1"># Batch Size</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">256</span>
 <span class="c1"># RNN Size</span>
@@ -12725,7 +12700,7 @@ Tests Passed
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span>
 <span class="c1"># Dropout Keep Probability</span>
 <span class="n">keep_probability</span> <span class="o">=</span> <span class="mf">0.7</span>
-<span class="n">display_step</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">display_step</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 
 </div>
@@ -12744,7 +12719,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12814,7 +12789,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12867,7 +12842,7 @@ Tests Passed
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12965,75 +12940,167 @@ Tests Passed
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Epoch   0 Batch    1/538 - Train Accuracy: 0.0035, Validation Accuracy: 0.0032, Loss: 5.8805
-Epoch   0 Batch    2/538 - Train Accuracy: 0.0039, Validation Accuracy: 0.0032, Loss: 5.8806
-Epoch   0 Batch    3/538 - Train Accuracy: 0.0035, Validation Accuracy: 0.0032, Loss: 5.8804
-Epoch   0 Batch    4/538 - Train Accuracy: 0.0031, Validation Accuracy: 0.0032, Loss: 5.8807
-Epoch   0 Batch    5/538 - Train Accuracy: 0.0033, Validation Accuracy: 0.0032, Loss: 5.8805
-Epoch   0 Batch    6/538 - Train Accuracy: 0.0043, Validation Accuracy: 0.0032, Loss: 5.8806
-Epoch   0 Batch    7/538 - Train Accuracy: 0.0037, Validation Accuracy: 0.0032, Loss: 5.8805
-Epoch   0 Batch    8/538 - Train Accuracy: 0.0049, Validation Accuracy: 0.0032, Loss: 5.8806
-Epoch   0 Batch    9/538 - Train Accuracy: 0.0053, Validation Accuracy: 0.0032, Loss: 5.8808
-Epoch   0 Batch   10/538 - Train Accuracy: 0.0039, Validation Accuracy: 0.0032, Loss: 5.8808
-Epoch   0 Batch   11/538 - Train Accuracy: 0.0045, Validation Accuracy: 0.0032, Loss: 5.8805
-Epoch   0 Batch   12/538 - Train Accuracy: 0.0025, Validation Accuracy: 0.0032, Loss: 5.8807
-Epoch   0 Batch   13/538 - Train Accuracy: 0.0026, Validation Accuracy: 0.0032, Loss: 5.8804
+<pre>Epoch   0 Batch   10/538 - Train Accuracy: 0.2658, Validation Accuracy: 0.3556, Loss: 3.5724
+Epoch   0 Batch   20/538 - Train Accuracy: 0.3460, Validation Accuracy: 0.3892, Loss: 3.0006
+Epoch   0 Batch   30/538 - Train Accuracy: 0.3572, Validation Accuracy: 0.4252, Loss: 2.8352
+Epoch   0 Batch   40/538 - Train Accuracy: 0.4309, Validation Accuracy: 0.4444, Loss: 2.3605
+Epoch   0 Batch   50/538 - Train Accuracy: 0.3816, Validation Accuracy: 0.4389, Loss: 2.3481
+Epoch   0 Batch   60/538 - Train Accuracy: 0.3826, Validation Accuracy: 0.4444, Loss: 2.2919
+Epoch   0 Batch   70/538 - Train Accuracy: 0.4113, Validation Accuracy: 0.4460, Loss: 2.0403
+Epoch   0 Batch   80/538 - Train Accuracy: 0.3781, Validation Accuracy: 0.4522, Loss: 2.0023
+Epoch   0 Batch   90/538 - Train Accuracy: 0.4258, Validation Accuracy: 0.4590, Loss: 1.7972
+Epoch   0 Batch  100/538 - Train Accuracy: 0.4525, Validation Accuracy: 0.4984, Loss: 1.6281
+Epoch   0 Batch  110/538 - Train Accuracy: 0.4455, Validation Accuracy: 0.4913, Loss: 1.5889
+Epoch   0 Batch  120/538 - Train Accuracy: 0.4395, Validation Accuracy: 0.4860, Loss: 1.4445
+Epoch   0 Batch  130/538 - Train Accuracy: 0.4900, Validation Accuracy: 0.5123, Loss: 1.3268
+Epoch   0 Batch  140/538 - Train Accuracy: 0.4469, Validation Accuracy: 0.5149, Loss: 1.3663
+Epoch   0 Batch  150/538 - Train Accuracy: 0.4953, Validation Accuracy: 0.5185, Loss: 1.2560
+Epoch   0 Batch  160/538 - Train Accuracy: 0.4758, Validation Accuracy: 0.5073, Loss: 1.1908
+Epoch   0 Batch  170/538 - Train Accuracy: 0.5277, Validation Accuracy: 0.5408, Loss: 1.1254
+Epoch   0 Batch  180/538 - Train Accuracy: 0.5432, Validation Accuracy: 0.5400, Loss: 1.0832
+Epoch   0 Batch  190/538 - Train Accuracy: 0.5074, Validation Accuracy: 0.5471, Loss: 1.0617
+Epoch   0 Batch  200/538 - Train Accuracy: 0.5199, Validation Accuracy: 0.5527, Loss: 0.9918
+Epoch   0 Batch  210/538 - Train Accuracy: 0.5132, Validation Accuracy: 0.5396, Loss: 0.9447
+Epoch   0 Batch  220/538 - Train Accuracy: 0.5314, Validation Accuracy: 0.5705, Loss: 0.9209
+Epoch   0 Batch  230/538 - Train Accuracy: 0.5271, Validation Accuracy: 0.5700, Loss: 0.9147
+Epoch   0 Batch  240/538 - Train Accuracy: 0.5551, Validation Accuracy: 0.5790, Loss: 0.8924
+Epoch   0 Batch  250/538 - Train Accuracy: 0.5523, Validation Accuracy: 0.5817, Loss: 0.8362
+Epoch   0 Batch  260/538 - Train Accuracy: 0.5575, Validation Accuracy: 0.5916, Loss: 0.8169
+Epoch   0 Batch  270/538 - Train Accuracy: 0.5500, Validation Accuracy: 0.5852, Loss: 0.7859
+Epoch   0 Batch  280/538 - Train Accuracy: 0.6233, Validation Accuracy: 0.6025, Loss: 0.7372
+Epoch   0 Batch  290/538 - Train Accuracy: 0.5615, Validation Accuracy: 0.6025, Loss: 0.7468
+Epoch   0 Batch  300/538 - Train Accuracy: 0.6148, Validation Accuracy: 0.6097, Loss: 0.7056
+Epoch   0 Batch  310/538 - Train Accuracy: 0.5945, Validation Accuracy: 0.6126, Loss: 0.7051
+Epoch   0 Batch  320/538 - Train Accuracy: 0.6200, Validation Accuracy: 0.6209, Loss: 0.6713
+Epoch   0 Batch  330/538 - Train Accuracy: 0.6239, Validation Accuracy: 0.6293, Loss: 0.6511
+Epoch   0 Batch  340/538 - Train Accuracy: 0.5893, Validation Accuracy: 0.6294, Loss: 0.6974
+Epoch   0 Batch  350/538 - Train Accuracy: 0.6144, Validation Accuracy: 0.6227, Loss: 0.6498
+Epoch   0 Batch  360/538 - Train Accuracy: 0.6221, Validation Accuracy: 0.6397, Loss: 0.6429
+Epoch   0 Batch  370/538 - Train Accuracy: 0.6072, Validation Accuracy: 0.6310, Loss: 0.6296
+Epoch   0 Batch  380/538 - Train Accuracy: 0.5904, Validation Accuracy: 0.6373, Loss: 0.5991
+Epoch   0 Batch  390/538 - Train Accuracy: 0.6570, Validation Accuracy: 0.6403, Loss: 0.5708
+Epoch   0 Batch  400/538 - Train Accuracy: 0.6334, Validation Accuracy: 0.6532, Loss: 0.5706
+Epoch   0 Batch  410/538 - Train Accuracy: 0.6176, Validation Accuracy: 0.6488, Loss: 0.5840
+Epoch   0 Batch  420/538 - Train Accuracy: 0.6303, Validation Accuracy: 0.6488, Loss: 0.5534
+Epoch   0 Batch  430/538 - Train Accuracy: 0.6467, Validation Accuracy: 0.6539, Loss: 0.5549
+Epoch   0 Batch  440/538 - Train Accuracy: 0.6453, Validation Accuracy: 0.6697, Loss: 0.5769
+Epoch   0 Batch  450/538 - Train Accuracy: 0.6576, Validation Accuracy: 0.6699, Loss: 0.5406
+Epoch   0 Batch  460/538 - Train Accuracy: 0.6404, Validation Accuracy: 0.6754, Loss: 0.5124
+Epoch   0 Batch  470/538 - Train Accuracy: 0.6670, Validation Accuracy: 0.6655, Loss: 0.5006
+Epoch   0 Batch  480/538 - Train Accuracy: 0.6942, Validation Accuracy: 0.6651, Loss: 0.4923
+Epoch   0 Batch  490/538 - Train Accuracy: 0.6875, Validation Accuracy: 0.6806, Loss: 0.4921
+Epoch   0 Batch  500/538 - Train Accuracy: 0.7234, Validation Accuracy: 0.6944, Loss: 0.4473
+Epoch   0 Batch  510/538 - Train Accuracy: 0.7102, Validation Accuracy: 0.7010, Loss: 0.4647
+Epoch   0 Batch  520/538 - Train Accuracy: 0.7150, Validation Accuracy: 0.6996, Loss: 0.4770
+Epoch   0 Batch  530/538 - Train Accuracy: 0.6889, Validation Accuracy: 0.6854, Loss: 0.4608
+Epoch   1 Batch   10/538 - Train Accuracy: 0.6773, Validation Accuracy: 0.7051, Loss: 0.4551
+Epoch   1 Batch   20/538 - Train Accuracy: 0.7161, Validation Accuracy: 0.6942, Loss: 0.4260
+Epoch   1 Batch   30/538 - Train Accuracy: 0.6910, Validation Accuracy: 0.7321, Loss: 0.4217
+Epoch   1 Batch   40/538 - Train Accuracy: 0.7591, Validation Accuracy: 0.7330, Loss: 0.3496
+Epoch   1 Batch   50/538 - Train Accuracy: 0.7330, Validation Accuracy: 0.7397, Loss: 0.3850
+Epoch   1 Batch   60/538 - Train Accuracy: 0.7451, Validation Accuracy: 0.7276, Loss: 0.3619
+Epoch   1 Batch   70/538 - Train Accuracy: 0.7597, Validation Accuracy: 0.7390, Loss: 0.3397
+Epoch   1 Batch   80/538 - Train Accuracy: 0.7594, Validation Accuracy: 0.7583, Loss: 0.3561
+Epoch   1 Batch   90/538 - Train Accuracy: 0.7519, Validation Accuracy: 0.7385, Loss: 0.3428
+Epoch   1 Batch  100/538 - Train Accuracy: 0.7768, Validation Accuracy: 0.7617, Loss: 0.3062
+Epoch   1 Batch  110/538 - Train Accuracy: 0.7625, Validation Accuracy: 0.7763, Loss: 0.3082
+Epoch   1 Batch  120/538 - Train Accuracy: 0.8051, Validation Accuracy: 0.7775, Loss: 0.2786
+Epoch   1 Batch  130/538 - Train Accuracy: 0.7891, Validation Accuracy: 0.7853, Loss: 0.2695
+Epoch   1 Batch  140/538 - Train Accuracy: 0.7924, Validation Accuracy: 0.7924, Loss: 0.2936
+Epoch   1 Batch  150/538 - Train Accuracy: 0.8057, Validation Accuracy: 0.8107, Loss: 0.2516
+Epoch   1 Batch  160/538 - Train Accuracy: 0.8119, Validation Accuracy: 0.8100, Loss: 0.2343
+Epoch   1 Batch  170/538 - Train Accuracy: 0.8183, Validation Accuracy: 0.8089, Loss: 0.2530
+Epoch   1 Batch  180/538 - Train Accuracy: 0.8545, Validation Accuracy: 0.8162, Loss: 0.2325
+Epoch   1 Batch  190/538 - Train Accuracy: 0.8384, Validation Accuracy: 0.8503, Loss: 0.2569
+Epoch   1 Batch  200/538 - Train Accuracy: 0.8438, Validation Accuracy: 0.8294, Loss: 0.2139
+Epoch   1 Batch  210/538 - Train Accuracy: 0.8132, Validation Accuracy: 0.8393, Loss: 0.2128
+Epoch   1 Batch  220/538 - Train Accuracy: 0.8410, Validation Accuracy: 0.8278, Loss: 0.1935
+Epoch   1 Batch  230/538 - Train Accuracy: 0.8613, Validation Accuracy: 0.8375, Loss: 0.1963
+Epoch   1 Batch  240/538 - Train Accuracy: 0.8598, Validation Accuracy: 0.8569, Loss: 0.1935
+Epoch   1 Batch  250/538 - Train Accuracy: 0.8680, Validation Accuracy: 0.8397, Loss: 0.1823
+Epoch   1 Batch  260/538 - Train Accuracy: 0.8356, Validation Accuracy: 0.8423, Loss: 0.1971
+Epoch   1 Batch  270/538 - Train Accuracy: 0.8635, Validation Accuracy: 0.8535, Loss: 0.1768
+Epoch   1 Batch  280/538 - Train Accuracy: 0.8843, Validation Accuracy: 0.8707, Loss: 0.1582
+Epoch   1 Batch  290/538 - Train Accuracy: 0.9045, Validation Accuracy: 0.8693, Loss: 0.1544
+Epoch   1 Batch  300/538 - Train Accuracy: 0.8797, Validation Accuracy: 0.8727, Loss: 0.1591
+Epoch   1 Batch  310/538 - Train Accuracy: 0.8912, Validation Accuracy: 0.8697, Loss: 0.1573
+Epoch   1 Batch  320/538 - Train Accuracy: 0.8899, Validation Accuracy: 0.8667, Loss: 0.1396
+Epoch   1 Batch  330/538 - Train Accuracy: 0.8832, Validation Accuracy: 0.8679, Loss: 0.1377
+Epoch   1 Batch  340/538 - Train Accuracy: 0.8758, Validation Accuracy: 0.8688, Loss: 0.1462
+Epoch   1 Batch  350/538 - Train Accuracy: 0.8925, Validation Accuracy: 0.8645, Loss: 0.1443
+Epoch   1 Batch  360/538 - Train Accuracy: 0.8883, Validation Accuracy: 0.8887, Loss: 0.1305
+Epoch   1 Batch  370/538 - Train Accuracy: 0.9055, Validation Accuracy: 0.8904, Loss: 0.1329
+Epoch   1 Batch  380/538 - Train Accuracy: 0.8850, Validation Accuracy: 0.8697, Loss: 0.1250
+Epoch   1 Batch  390/538 - Train Accuracy: 0.9176, Validation Accuracy: 0.8903, Loss: 0.1022
+Epoch   1 Batch  400/538 - Train Accuracy: 0.9094, Validation Accuracy: 0.8897, Loss: 0.1123
+Epoch   1 Batch  410/538 - Train Accuracy: 0.9141, Validation Accuracy: 0.8873, Loss: 0.1132
+Epoch   1 Batch  420/538 - Train Accuracy: 0.9229, Validation Accuracy: 0.8984, Loss: 0.1033
+Epoch   1 Batch  430/538 - Train Accuracy: 0.9008, Validation Accuracy: 0.8997, Loss: 0.0977
+Epoch   1 Batch  440/538 - Train Accuracy: 0.8963, Validation Accuracy: 0.9110, Loss: 0.1126
+Epoch   1 Batch  450/538 - Train Accuracy: 0.9040, Validation Accuracy: 0.9061, Loss: 0.1066
+Epoch   1 Batch  460/538 - Train Accuracy: 0.8850, Validation Accuracy: 0.9029, Loss: 0.1018
+Epoch   1 Batch  470/538 - Train Accuracy: 0.9204, Validation Accuracy: 0.8903, Loss: 0.0941
+Epoch   1 Batch  480/538 - Train Accuracy: 0.9191, Validation Accuracy: 0.8865, Loss: 0.0903
+Epoch   1 Batch  490/538 - Train Accuracy: 0.9100, Validation Accuracy: 0.8991, Loss: 0.0885
+Epoch   1 Batch  500/538 - Train Accuracy: 0.9283, Validation Accuracy: 0.9029, Loss: 0.0793
+Epoch   1 Batch  510/538 - Train Accuracy: 0.9111, Validation Accuracy: 0.9054, Loss: 0.0795
+Epoch   1 Batch  520/538 - Train Accuracy: 0.9143, Validation Accuracy: 0.9031, Loss: 0.0833
+Epoch   1 Batch  530/538 - Train Accuracy: 0.9004, Validation Accuracy: 0.9057, Loss: 0.0877
+Epoch   2 Batch   10/538 - Train Accuracy: 0.9244, Validation Accuracy: 0.8958, Loss: 0.0843
+Epoch   2 Batch   20/538 - Train Accuracy: 0.9269, Validation Accuracy: 0.9121, Loss: 0.0731
+Epoch   2 Batch   30/538 - Train Accuracy: 0.9176, Validation Accuracy: 0.8968, Loss: 0.0845
+Epoch   2 Batch   40/538 - Train Accuracy: 0.9396, Validation Accuracy: 0.9256, Loss: 0.0610
+Epoch   2 Batch   50/538 - Train Accuracy: 0.9199, Validation Accuracy: 0.9107, Loss: 0.0645
+Epoch   2 Batch   60/538 - Train Accuracy: 0.9254, Validation Accuracy: 0.8999, Loss: 0.0727
+Epoch   2 Batch   70/538 - Train Accuracy: 0.9262, Validation Accuracy: 0.9002, Loss: 0.0685
+Epoch   2 Batch   80/538 - Train Accuracy: 0.9221, Validation Accuracy: 0.9213, Loss: 0.0788
+Epoch   2 Batch   90/538 - Train Accuracy: 0.9157, Validation Accuracy: 0.9237, Loss: 0.0746
+Epoch   2 Batch  100/538 - Train Accuracy: 0.9408, Validation Accuracy: 0.9221, Loss: 0.0613
+Epoch   2 Batch  110/538 - Train Accuracy: 0.9367, Validation Accuracy: 0.9073, Loss: 0.0627
+Epoch   2 Batch  120/538 - Train Accuracy: 0.9344, Validation Accuracy: 0.9169, Loss: 0.0526
+Epoch   2 Batch  130/538 - Train Accuracy: 0.9386, Validation Accuracy: 0.9284, Loss: 0.0585
+Epoch   2 Batch  140/538 - Train Accuracy: 0.9119, Validation Accuracy: 0.9157, Loss: 0.0885
+Epoch   2 Batch  150/538 - Train Accuracy: 0.9367, Validation Accuracy: 0.9265, Loss: 0.0569
+Epoch   2 Batch  160/538 - Train Accuracy: 0.9191, Validation Accuracy: 0.9190, Loss: 0.0569
+Epoch   2 Batch  170/538 - Train Accuracy: 0.9250, Validation Accuracy: 0.9135, Loss: 0.0641
+Epoch   2 Batch  180/538 - Train Accuracy: 0.9356, Validation Accuracy: 0.9135, Loss: 0.0569
+Epoch   2 Batch  190/538 - Train Accuracy: 0.9284, Validation Accuracy: 0.9256, Loss: 0.0786
+Epoch   2 Batch  200/538 - Train Accuracy: 0.9449, Validation Accuracy: 0.9142, Loss: 0.0504
+Epoch   2 Batch  210/538 - Train Accuracy: 0.9185, Validation Accuracy: 0.9212, Loss: 0.0632
+Epoch   2 Batch  220/538 - Train Accuracy: 0.9196, Validation Accuracy: 0.9185, Loss: 0.0601
+Epoch   2 Batch  230/538 - Train Accuracy: 0.9316, Validation Accuracy: 0.9258, Loss: 0.0586
+Epoch   2 Batch  240/538 - Train Accuracy: 0.9408, Validation Accuracy: 0.9183, Loss: 0.0587
+Epoch   2 Batch  250/538 - Train Accuracy: 0.9543, Validation Accuracy: 0.9205, Loss: 0.0531
+Epoch   2 Batch  260/538 - Train Accuracy: 0.9068, Validation Accuracy: 0.9153, Loss: 0.0595
+Epoch   2 Batch  270/538 - Train Accuracy: 0.9391, Validation Accuracy: 0.9371, Loss: 0.0489
+Epoch   2 Batch  280/538 - Train Accuracy: 0.9526, Validation Accuracy: 0.9368, Loss: 0.0448
+Epoch   2 Batch  290/538 - Train Accuracy: 0.9578, Validation Accuracy: 0.9217, Loss: 0.0457
+Epoch   2 Batch  300/538 - Train Accuracy: 0.9228, Validation Accuracy: 0.9384, Loss: 0.0551
+Epoch   2 Batch  310/538 - Train Accuracy: 0.9596, Validation Accuracy: 0.9371, Loss: 0.0471
+Epoch   2 Batch  320/538 - Train Accuracy: 0.9422, Validation Accuracy: 0.9373, Loss: 0.0493
+Epoch   2 Batch  330/538 - Train Accuracy: 0.9613, Validation Accuracy: 0.9217, Loss: 0.0445
+Epoch   2 Batch  340/538 - Train Accuracy: 0.9385, Validation Accuracy: 0.9366, Loss: 0.0534
+Epoch   2 Batch  350/538 - Train Accuracy: 0.9542, Validation Accuracy: 0.9270, Loss: 0.0545
+Epoch   2 Batch  360/538 - Train Accuracy: 0.9531, Validation Accuracy: 0.9320, Loss: 0.0443
+Epoch   2 Batch  370/538 - Train Accuracy: 0.9459, Validation Accuracy: 0.9256, Loss: 0.0487
+Epoch   2 Batch  380/538 - Train Accuracy: 0.9516, Validation Accuracy: 0.9274, Loss: 0.0424
+Epoch   2 Batch  390/538 - Train Accuracy: 0.9431, Validation Accuracy: 0.9439, Loss: 0.0428
+Epoch   2 Batch  400/538 - Train Accuracy: 0.9490, Validation Accuracy: 0.9467, Loss: 0.0513
+Epoch   2 Batch  410/538 - Train Accuracy: 0.9557, Validation Accuracy: 0.9386, Loss: 0.0467
+Epoch   2 Batch  420/538 - Train Accuracy: 0.9533, Validation Accuracy: 0.9375, Loss: 0.0405
+Epoch   2 Batch  430/538 - Train Accuracy: 0.9230, Validation Accuracy: 0.9284, Loss: 0.0456
+Epoch   2 Batch  440/538 - Train Accuracy: 0.9379, Validation Accuracy: 0.9442, Loss: 0.0503
+Epoch   2 Batch  450/538 - Train Accuracy: 0.9256, Validation Accuracy: 0.9453, Loss: 0.0558
+Epoch   2 Batch  460/538 - Train Accuracy: 0.9315, Validation Accuracy: 0.9467, Loss: 0.0508
+Epoch   2 Batch  470/538 - Train Accuracy: 0.9479, Validation Accuracy: 0.9407, Loss: 0.0460
+Epoch   2 Batch  480/538 - Train Accuracy: 0.9608, Validation Accuracy: 0.9416, Loss: 0.0424
+Epoch   2 Batch  490/538 - Train Accuracy: 0.9423, Validation Accuracy: 0.9254, Loss: 0.0417
+Epoch   2 Batch  500/538 - Train Accuracy: 0.9593, Validation Accuracy: 0.9437, Loss: 0.0337
+Epoch   2 Batch  510/538 - Train Accuracy: 0.9637, Validation Accuracy: 0.9366, Loss: 0.0418
+Epoch   2 Batch  520/538 - Train Accuracy: 0.9436, Validation Accuracy: 0.9476, Loss: 0.0428
+Epoch   2 Batch  530/538 - Train Accuracy: 0.9328, Validation Accuracy: 0.9540, Loss: 0.0492
+Model Trained and Saved
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-23-8b554ffa681f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">     57</span>                      source_sequence_length<span class="ansi-yellow-intense-fg ansi-bold">:</span> sources_lengths<span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-fg">     58</span>                      target_sequence_length<span class="ansi-yellow-intense-fg ansi-bold">:</span> targets_lengths<span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 59</span><span class="ansi-yellow-intense-fg ansi-bold">                      keep_prob: 1.0})
-</span><span class="ansi-green-fg">     60</span> 
-<span class="ansi-green-fg">     61</span> 
-
-<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Continuum\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-intense-fg ansi-bold">(self, fetches, feed_dict, options, run_metadata)</span>
-<span class="ansi-green-fg">    787</span>     <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    788</span>       result = self._run(None, fetches, feed_dict, options_ptr,
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 789</span><span class="ansi-yellow-intense-fg ansi-bold">                          run_metadata_ptr)
-</span><span class="ansi-green-fg">    790</span>       <span class="ansi-green-intense-fg ansi-bold">if</span> run_metadata<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    791</span>         proto_data <span class="ansi-yellow-intense-fg ansi-bold">=</span> tf_session<span class="ansi-yellow-intense-fg ansi-bold">.</span>TF_GetBuffer<span class="ansi-yellow-intense-fg ansi-bold">(</span>run_metadata_ptr<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Continuum\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_run</span><span class="ansi-blue-intense-fg ansi-bold">(self, handle, fetches, feed_dict, options, run_metadata)</span>
-<span class="ansi-green-fg">    995</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> final_fetches <span class="ansi-green-intense-fg ansi-bold">or</span> final_targets<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    996</span>       results = self._do_run(handle, final_targets, final_fetches,
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 997</span><span class="ansi-yellow-intense-fg ansi-bold">                              feed_dict_string, options, run_metadata)
-</span><span class="ansi-green-fg">    998</span>     <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    999</span>       results <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Continuum\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_do_run</span><span class="ansi-blue-intense-fg ansi-bold">(self, handle, target_list, fetch_list, feed_dict, options, run_metadata)</span>
-<span class="ansi-green-fg">   1130</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> handle <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   1131</span>       return self._do_call(_run_fn, self._session, feed_dict, fetch_list,
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 1132</span><span class="ansi-yellow-intense-fg ansi-bold">                            target_list, options, run_metadata)
-</span><span class="ansi-green-fg">   1133</span>     <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   1134</span>       return self._do_call(_prun_fn, self._session, handle, feed_dict,
-
-<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Continuum\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_do_call</span><span class="ansi-blue-intense-fg ansi-bold">(self, fn, *args)</span>
-<span class="ansi-green-fg">   1137</span>   <span class="ansi-green-intense-fg ansi-bold">def</span> _do_call<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span> fn<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   1138</span>     <span class="ansi-green-intense-fg ansi-bold">try</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 1139</span><span class="ansi-yellow-intense-fg ansi-bold">       </span><span class="ansi-green-intense-fg ansi-bold">return</span> fn<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   1140</span>     <span class="ansi-green-intense-fg ansi-bold">except</span> errors<span class="ansi-yellow-intense-fg ansi-bold">.</span>OpError <span class="ansi-green-intense-fg ansi-bold">as</span> e<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">   1141</span>       message <span class="ansi-yellow-intense-fg ansi-bold">=</span> compat<span class="ansi-yellow-intense-fg ansi-bold">.</span>as_text<span class="ansi-yellow-intense-fg ansi-bold">(</span>e<span class="ansi-yellow-intense-fg ansi-bold">.</span>message<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Continuum\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\client\session.py</span> in <span class="ansi-cyan-fg">_run_fn</span><span class="ansi-blue-intense-fg ansi-bold">(session, feed_dict, fetch_list, target_list, options, run_metadata)</span>
-<span class="ansi-green-fg">   1119</span>         return tf_session.TF_Run(session, options,
-<span class="ansi-green-fg">   1120</span>                                  feed_dict<span class="ansi-yellow-intense-fg ansi-bold">,</span> fetch_list<span class="ansi-yellow-intense-fg ansi-bold">,</span> target_list<span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 1121</span><span class="ansi-yellow-intense-fg ansi-bold">                                  status, run_metadata)
-</span><span class="ansi-green-fg">   1122</span> 
-<span class="ansi-green-fg">   1123</span>     <span class="ansi-green-intense-fg ansi-bold">def</span> _prun_fn<span class="ansi-yellow-intense-fg ansi-bold">(</span>session<span class="ansi-yellow-intense-fg ansi-bold">,</span> handle<span class="ansi-yellow-intense-fg ansi-bold">,</span> feed_dict<span class="ansi-yellow-intense-fg ansi-bold">,</span> fetch_list<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>: </pre>
 </div>
 </div>
 
@@ -13052,7 +13119,7 @@ Epoch   0 Batch   13/538 - Train Accuracy: 0.0026, Validation Accuracy: 0.0032, 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -13077,7 +13144,7 @@ Epoch   0 Batch   13/538 - Train Accuracy: 0.0026, Validation Accuracy: 0.0032, 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -13115,7 +13182,7 @@ Epoch   0 Batch   13/538 - Train Accuracy: 0.0026, Validation Accuracy: 0.0032, 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sentence_to_seq</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">vocab_to_int</span><span class="p">):</span>
@@ -13125,8 +13192,13 @@ Epoch   0 Batch   13/538 - Train Accuracy: 0.0026, Validation Accuracy: 0.0032, 
 <span class="sd">    :param vocab_to_int: Dictionary to go from the words to an id</span>
 <span class="sd">    :return: List of word ids</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># TODO: Implement Function</span>
-    <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;&lt;UNK&gt;&quot;</span>
+    
+    <span class="n">word_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">vocab_to_int</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">vocab_to_int</span><span class="p">[</span><span class="n">default</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">word_ids</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -13136,6 +13208,24 @@ Epoch   0 Batch   13/538 - Train Accuracy: 0.0026, Validation Accuracy: 0.0032, 
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Tests Passed
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13151,7 +13241,7 @@ Epoch   0 Batch   13/538 - Train Accuracy: 0.0026, Validation Accuracy: 0.0032, 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">translate_sentence</span> <span class="o">=</span> <span class="s1">&#39;he saw a old yellow truck .&#39;</span>
@@ -13189,6 +13279,31 @@ Epoch   0 Batch   13/538 - Train Accuracy: 0.0026, Validation Accuracy: 0.0032, 
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>INFO:tensorflow:Restoring parameters from checkpoints/dev
+Input
+  Word Ids:      [96, 126, 149, 222, 14, 31, 206]
+  English Words: [&#39;he&#39;, &#39;saw&#39;, &#39;a&#39;, &#39;old&#39;, &#39;yellow&#39;, &#39;truck&#39;, &#39;.&#39;]
+
+Prediction
+  Word Ids:      [339, 224, 338, 69, 180, 88, 1]
+  French Words: il a vu le vieux camion &lt;EOS&gt;
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
